@@ -9,15 +9,13 @@ The premise of the High or Low as you might have guessed already is to guess whe
 ## Initial Thoughts
 Proper planning, time management and execution will be the key to this proect. Project will consist of html, css and Javascript for the programming and the most part so I have to be prepared to put in millions of hours googling syntaxes that I need specially the ones involving math. Debugging and tweaking the code throughout the entire project, until it is fine tuned and works the way that is intended.
 ## Phases of completion
-1. Start
-      - start event, gameplay options, build the deck (maybe objects or arrays)
-2. Visuals
+1. Logic
+	- game start, gameplay and game finish 
+	  	- arrays, objects, functions statements and events	
+2. Visuals 
       - HTML, CSS, DOM
-3. Gameplay logic
-      - randomize, functions, events, more DOM
-4. Check for winner
-5. Game Complete
-6. Visual Enhancements (if time allows)
+3. Twaking and debugging      
+3. Visual Enhancements (if time allows)
 ## Resources and Tools
 - Sublime Text Editor
 - https://www.w3schools.com/
