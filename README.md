@@ -3,7 +3,7 @@
 ## Game Description
 The premise of the High or Low as you might have guessed already is to guess whether the next card is higher or lower than the last one dealt. That's basically it!. I will do my best to make this game exciting by adding on some dynamics like having lives or limited chances to guess and/or being able to place bets. 
 ## Wireframe
-- to follow
+Check img folder
 ## Initial Thoughts
 Proper planning, time management and execution will be the key to this proect. Project will consist of html, css and Javascript for the programming and the most part so I have to be prepared to put in millions of hours googling syntaxes that I need specially the ones involving math. Debugging and tweaking the code throughout the entire project, until it is fine tuned and works the way that is intended.
 ## Phases of completion
