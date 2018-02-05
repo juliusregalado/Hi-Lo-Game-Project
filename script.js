@@ -12,6 +12,9 @@ let cards = [];
 let cardsInPlay = 0;
 let score = 0;
 let lives = 3;
+const correct = document.getElementById('correct');
+const inCorrect = document.getElementById('inCorrect');
+const gamOver = document.getElementById('gamOver');
 const cardOutput = document.getElementById('cardOutput');
 const scoreOutput = document.getElementById('scoreOutput');
 const message = document.getElementById('message');
@@ -46,13 +49,28 @@ function hilo(pressedButton){
 		win = true;
 		score++;
 		message.innerHTML = 'You were Right! :)';
+		correct.style.display = 'block'
+		setTimeout(function () {
+			correct.style.display = 'none'
+		}, 1000)
 	} else if(pressedButton === 'low' && oldCard > newCard) {
 		win = true;	
 		score++;
 		message.innerHTML = 'You were Right! :)';
+		correct.style.display = 'block'
+		setTimeout(function () {
+			correct.style.display = 'none'
+		}, 1000)
+	} else if(oldCard === newCard) {
+		message.innerHTML = 'Break Even!'
 	}else {
+		win = false;
+		lives --;
 		message.innerHTML = 'You were WRONG!:(';
-		lives--;
+		inCorrect.style.display = 'block';
+		setTimeout(function () {
+			inCorrect.style.display = 'none';
+		}, 2000)
 		if(lives === 0) {
 			endPLay();
 		}
