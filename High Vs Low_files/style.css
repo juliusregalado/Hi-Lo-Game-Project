@@ -2,7 +2,12 @@ body {
 	background: url(img/table-background.jpg);
 }
 #start {
-	margin: 20px;
+	margin-top: 20px;
+}
+
+#highlow {
+	display: 'none';
+	height: 60px;
 }
 .icard {
 	padding: 10px;
@@ -13,6 +18,6 @@ body {
 	margin-top: 30px;
 	height: 60px;
 }
-#highLow {
-	display: none;
-}
+/*#btnhigh, #btnlow {*/
+	/*display: none;*/
+/*}*/

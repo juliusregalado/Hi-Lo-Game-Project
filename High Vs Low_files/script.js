@@ -18,6 +18,8 @@ const message = document.getElementById('message');
 const start = document.getElementById('start');
 const btnstart = document.getElementById('btnstart')
 const highLow = document.getElementById('highLow');
+const btnhigh = document.getElementById('btnhigh');
+const btnlow = document.getElementById('btnlow');
 const suits = ['spades', 'hearts', 'clubs', 'diams'];
 const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 ///////////////////////////////////////////
@@ -30,6 +32,8 @@ function gameStart() {
 	message.innerHTML = 'Game Started!';
 	start.style.display = 'none';
 	highLow.style.display = 'block';
+	btnhigh.style.display= 'block';
+	btnlow.style.display= 'block';
 	buildCards();
 	shuffleCards(cards);
 	cardOutput.innerHTML = '';
@@ -62,8 +66,8 @@ function hilo(pressedButton){
 
 function endPLay() {
 	start.style.display = 'block';
-	btnstart.innerHTML = 'Restart?';
-	highLow.style.display='none';
+	btnstart.innerHTML = 'Restart?'
+	highLow.style.display='none'
 }
 function shuffleCards(array) {
 	for(let i = array.length -1; i >0 ; i--){
@@ -98,8 +102,7 @@ function buildCards() {
 //////////////Eventlisteners///////////////
 ///////////////////////////////////////////
 document.getElementById('btnstart').addEventListener('click', gameStart);
-//document.getElementById('btnhigh').addEventListener('click', hilo);
-//document.getElementById('btnlow').addEventListener('click', hilo);
+
 
 
 
