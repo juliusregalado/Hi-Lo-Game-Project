@@ -6,28 +6,22 @@
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<header>
-		<h1>High or Low</h1>
-		<div id="streak"></div>
-		<div id="chips"></div>
-	</header>
-	<section id="card-table">
-		<div id="deck shuffle"></div>
-		<div id="card1"></div>
-		<div id="card2"></div>	
-	</section>
-	<section id="high-low">
-		<button type="button" id="high">High</button>
-		<button type="Button" id="low">Low</button>
-	</section>
-	<section>
-		<button type="button" id="bet-ten">10</button>
-		<button type="button" id="bet-twens">20</button>
-		<button tyoe="button" id="bet-fitty">50</button>
-		<button type="button" id="bet-hundo">100</button>
-		<button type="button" id="bet-twohundo">200</button>
-	</section>
-
+	<div class="container">
+		<h1>High vs Low Game</h1>
+		<div id="message"> Rules: Select either Hi or Low for the next card. Guess the value of the down facing card versus the up facing card. Place your bet depending on how confindent you are about your choice of hi or low on the next card.
+		</div>
+		<div id="start">
+			<button id="btnstart" type="button" onclick="gameStart()" class="btn">
+				Start Game
+			</button>
+		</div>	
+		<div id='score'></div>
+		<div id="cards"></div>
+		<div id='highLow'>
+			<button id="btnhigh" type="button" onclick="hilo('high')" class="btn">High</button>
+			<button id="btnsloe" type="button" onclick="hilo('low')" class="btn">Low</button>
+		</div>
+	</div>
 <script type="text/javascript" src= "script.js"></script>
 </body>
 </html>

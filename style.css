@@ -1,3 +1,20 @@
 body {
-	background: url(../img/table-background.jpg);
+	background: url(img/table-background.jpg);
+}
+#start {
+	margin-top: 20px;
+}
+
+#highlow {
+	display: none;
+	height: 60px;
+}
+.icard {
+	padding: 10px;
+	border: 1px solid #ddd;
+	background-color: white;
+}
+#cards {
+	margin-top: 30px;
+	height: 60px;
 }
