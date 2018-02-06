@@ -9,27 +9,33 @@
 	<div class="container">
 		<h1>High vs Low Game</h1>
 		<div id="message"> Rules: Select either Hi or Low for the next card. Guess the value of the down facing card versus the up facing card. Place your bet depending on how confindent you are about your choice of hi or low on the next card.
-		</div>
-		<div id="start">
-			<button id="btnstart" type="button" class="btn">
-				Start Game
-			</button>
 		</div>	
-		<div id='scoreOutput'></div>
+		<div id='scoreOutput'>
+			<div>Total $<span id='chips'>100</span>
+				<input type='number' id='bet' value='0' min='1' max='100'>
+			</div>
+		</div>
 		<div id='cardOutput'></div>
 		<div id='highLow'>
 			<button id="btnhigh" type="button" onclick="hilo('high')" class="btn">High</button>
 			<button id="btnlow" type="button" onclick="hilo('low')" class="btn">Low</button>
 		</div>
-	<div id='correct' style='display:none'>
-		<img src="https://media.giphy.com/media/QN6iJuhvb1CKY/giphy.gif">
-	</div>
-	<div id='inCorrect' style='display:none'>
-		<img src="https://media.giphy.com/media/hPPx8yk3Bmqys/giphy.gif">
-	</div>
-	<div id='gameOver' style='display:none'>
-		<img src="https://media.giphy.com/media/ZqlvCTNHpqrio/giphy.gif">
-	</div>
+		<div id="start">
+			<button id="btnstart" type="button" class="btn">
+				Start Game
+			</button>
+		</div>
+		<!--
+		<div id='correct' style='display:none'>
+			<img src="https://media.giphy.com/media/QN6iJuhvb1CKY/giphy.gif">
+		</div>
+		<div id='inCorrect' style='display:none'>
+			<img src="https://media.giphy.com/media/hPPx8yk3Bmqys/giphy.gif">
+		</div>
+		<div id='gameOver' style='display:none'>
+			<img src="https://media.giphy.com/media/ZqlvCTNHpqrio/giphy.gif">
+		</div>
+		 -->
 	</div>
 <script type="text/javascript" src= "script.js"></script>
 </body>
