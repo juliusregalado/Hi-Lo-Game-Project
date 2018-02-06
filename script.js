@@ -1,7 +1,7 @@
 console.log("JS is linked")
-///////////////////////////////////////////
-////Objects,Arrays and variables(Global)///
-///////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
+////////////////////Objects,Arrays and variables(Global)////////////////////
+////////////////////////////////////////////////////////////////////////////
 //deck of cards
 //cards in play (one flipped one is not)
 //streak counter
@@ -18,15 +18,16 @@ const message = document.getElementById('message');
 const start = document.getElementById('start');
 const btnstart = document.getElementById('btnstart')
 const highLow = document.getElementById('highLow');
+const maxBet= document.getElementById('maxBet')
 const suits = ['spades', 'hearts', 'clubs', 'diams'];
 const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 //giphy varibles
 //const correct = document.getElementById('correct');
 //const inCorrect = document.getElementById('inCorrect');
 //const gamOver = document.getElementById('gamOver')
-///////////////////////////////////////////
-///////////Functions / Statements//////////
-///////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////// 
+/////////////////////////////Functions / Statements//////////////////////////
+/////////////////////////////////////////////////////////////////////////////
 //Create Deck/ gameSart / checkwin
 function gameStart() {
 	cardsInPlay = 0;
@@ -117,7 +118,9 @@ function buildCards() {
 		}
 	}
 }
-
+function maximumBet() {
+	bet.value = chips;
+}
 function checkBet() {
 	if(this.value > chips) {
 		this.value = chips;
@@ -129,12 +132,14 @@ function checkBet() {
 	}
 	
 }
-///////////////////////////////////////////
-//////////////Eventlisteners///////////////
-///////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////Eventlisteners//////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
 btnstart.addEventListener('click', gameStart);
 bet.addEventListener('change', checkBet);
+bet.addEventListener('input', checkBet);
 bet.addEventListener('blur', checkBet);
+maxBet.addEventListener('click', maximumBet);
 
 
 

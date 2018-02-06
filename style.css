@@ -1,5 +1,6 @@
 body {
-	background: url(img/table-background.jpg);
+	background: url(img/tablebackground.jpg);
+	background-size: cover;
 }
 
 h1 {
@@ -17,6 +18,7 @@ h1 {
 
 #bet {
 	font-size: 20px;
+	width: 100px;
 }
 
 #myChips {
@@ -124,6 +126,7 @@ h1 {
 
 #message {
 	text-align: center;
+	font-size: 25px;
 }
 
 
