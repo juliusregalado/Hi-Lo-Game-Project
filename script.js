@@ -10,28 +10,31 @@ console.log("JS is linked")
 let chips = 100;
 let cards = [];
 let cardsInPlay = 0;
+let myChips = document.getElementById('myChips');
+let bet = document.getElementById('bet');
 const cardOutput = document.getElementById('cardOutput');
-const scoreOutput = document.getElementById('scoreOutput');
+const bettingOutput = document.getElementById('bettingOutput');
 const message = document.getElementById('message');
-const myChips = document.getElementById('myChips');
-const bet = document.getElementById('bet');
 const start = document.getElementById('start');
 const btnstart = document.getElementById('btnstart')
 const highLow = document.getElementById('highLow');
 const suits = ['spades', 'hearts', 'clubs', 'diams'];
 const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
 //giphy varibles
-const correct = document.getElementById('correct');
-const inCorrect = document.getElementById('inCorrect');
-const gamOver = document.getElementById('gamOver')
+//const correct = document.getElementById('correct');
+//const inCorrect = document.getElementById('inCorrect');
+//const gamOver = document.getElementById('gamOver')
 ///////////////////////////////////////////
 ///////////Functions / Statements//////////
 ///////////////////////////////////////////
 //Create Deck/ gameSart / checkwin
 function gameStart() {
-	chips = 100;
 	cardsInPlay = 0;
+	chips = 100;
+	bet.value = 0;
+	myChips.innerHTML = chips;
 	message.innerHTML = 'Game Started!';
+	bettingOutput.style.display = 'block';
 	cardOutput.innerHTML = '';
 	start.style.display = 'none';
 	highLow.style.display = 'block';
@@ -40,23 +43,21 @@ function gameStart() {
 	cardOutput.innerHTML += showCards();	
 }
 function hilo(pressedButton){
-	let win = false;
 	let oldCard = cards[cardsInPlay].cardValue;
-	let myBetAmount = parseInt(bet.value);
 	cardsInPlay++;
 	cardOutput.innerHTML += showCards();
 	let newCard = cards[cardsInPlay].cardValue;
 	if(pressedButton === 'high' && oldCard < newCard) {
-		win = true;
-		chips += myBetAmount;
+		chips += parseInt(bet.value);
+		myChips.innerHTML = chips;
 		message.innerHTML = 'You were Right! :)';
 		//correct.style.display = 'block'
 		//setTimeout(function () {
 		//	correct.style.display = 'none'
 		//}, 1000)
-	} else if(pressedButton === 'low' && oldCard > newCard) {
-		win = true;	
-		chips += myBetAmount;
+	} else if(pressedButton === 'low' && oldCard > newCard) {	
+		chips += parseInt(bet.value);
+		myChips.innerHTML = chips;
 		message.innerHTML = 'You were Right! :)';
 		//correct.style.display = 'block'
 		//setTimeout(function () {
@@ -65,8 +66,8 @@ function hilo(pressedButton){
 	} else if(oldCard === newCard) {
 		message.innerHTML = 'Tie!'
 	}else {
-		win = false;
-		chips -= myBetAmount;
+		chips -= parseInt(bet.value);
+		myChips.innerHTML = chips;
 		message.innerHTML = 'You were WRONG!:(';
 		//inCorrect.style.display = 'block';
 		//setTimeout(function () {
@@ -84,7 +85,6 @@ function endPLay() {
 	message.innerHTML = 'Game over. You have $' + chips;
 	start.style.display = 'block';
 	btnstart.innerHTML = 'Restart?';
-	scoreOutput.style.display = 'none';
 }
 function shuffleCards(array) {
 	for(let i = array.length -1; i >0 ; i--){
@@ -121,18 +121,20 @@ function buildCards() {
 function checkBet() {
 	if(this.value > chips) {
 		this.value = chips;
-	}
+		message.innerHTML = 'Bet adjusted to $ ' + this.value;
+	}	
 	if(this.value < 0) {
 		this.value = 0;
+		message.innerHTML = 'Bet adjusted to $ ' + this.value;
 	}
-	message.innerHTML = "Bet changed to $" + this.value;
+	
 }
 ///////////////////////////////////////////
 //////////////Eventlisteners///////////////
 ///////////////////////////////////////////
 btnstart.addEventListener('click', gameStart);
-//bet.addEventListener('change', checkBet);
-//bet.addEventListener('blur', checkBet);
+bet.addEventListener('change', checkBet);
+bet.addEventListener('blur', checkBet);
 
 
 
