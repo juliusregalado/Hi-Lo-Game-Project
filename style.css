@@ -1,10 +1,50 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+
 body {
-	background: url(img/tablebackground.jpg);
+	background: url(img/tablebackground.jpg), no-repeat;
+	background-position: center;
+	background-attachment: fixed;
 	background-size: cover;
+	font-family: Reem Kufi;
+}
+
+nav {
+	background: #333;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	display: flex;
+	display: -webkit-box;
+	display: -moz-box;
+	opacity: 0.4;
+	justify-content: space-between;
+
+}
+
+nav a {
+	text-decoration: none;
+	text-align: center;
+	color: white;
+	padding: 10px;
+	justify-content: space-between;
 }
 
 h1 {
 	text-align: center;
+}
+
+p {
+	font-family: Reem Kufi;
+	color: white;	
+}
+
+.flex-wrapper {
+	width: 100%;
+	min-width: 960;
+	margin: 0 auto;
 }
 
 #start {
@@ -12,9 +52,9 @@ h1 {
 	text-align: center;
 }
 
-#bettingOutput {
+#betOutput {
 	font-size: 20px;
-}
+}		
 
 #bet {
 	font-size: 20px;
@@ -25,7 +65,11 @@ h1 {
 	font-size: 40px;
 }
 
-#highLow, #score {
+#highLow {
+	padding: 20px;
+}
+
+#highLow, #betInput, #betOuput {
 	display: none;
 }
 
@@ -72,24 +116,24 @@ h1 {
 }
 
 .cardtop {
-	font-size: 2em;
+	font-size: 1.5em;
 	top: 5px;
 	left: 5px;
 	position: absolute;
-	line-height: 0.7em;
+	line-height: 1em;
 }
 
 .cardmid {
 	text-align: center;
 	font-size: 7em;
-	top: 38px;
-	left: 50px;
+	top: 30px;
+	left: 30px;
 	position: absolute;
 }
 
 .cardbottom {
-	line-height: 0.7em;
-	font-size: 2em;
+	line-height: 1em;
+	font-size: 1.5em;
 	transform: rotate(-180deg);
 	-webkit-transform: rotate(-180deg);
 	-moz-transform: rotate(-180deg);
@@ -100,7 +144,7 @@ h1 {
 
 .btn {
 	border-radius: 5px;
-	padding: 9px 20px;
+	padding: 9px 20px;	
 	color: white;
 	display: inline-block;
 	text-shadow: 1px 1px #000000;
@@ -108,25 +152,63 @@ h1 {
 
 #btnstart {
 	background-color: black;
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 10px;
+    width: 150px;
 }
 
 #btnhigh {
-	text-align: center;
 	background-color: red;
 }
 
 #btnlow {
-	text-align: center;
 	background-color: blue;
 }	
-
-#dollars {
-	font-size: 2.5em;
-}
 
 #message {
 	text-align: center;
 	font-size: 25px;
 }
 
+#correct, #inCorrect, #gameOver {
+	display: none;
+}
 
+footer {
+  color: #ffffff;
+  background-color: #191b1d;
+  text-align: center;
+  padding-bottom: 15px;
+  border-top: #a80505 1px solid;
+  border-bottom: #a80505 1px solid;
+}
+.marker {
+	font-family: 'Permanent Marker'
+}
+
+#footer {
+   position:absolute;
+   bottom:0;
+   width:100%;
+   height:40px;
+   position: fixed;
+   margin-bottom: 40px; 
+}
+/*
+@media screen and (max-width: 768px) {
+	nav a {
+		text-decoration: none;
+		text-align: center;
+		color: white;
+		display: block;
+		padding: 10px;
+	}
+}
+*/

@@ -13,7 +13,8 @@ let cardsInPlay = 0;
 let myChips = document.getElementById('myChips');
 let bet = document.getElementById('bet');
 const cardOutput = document.getElementById('cardOutput');
-const bettingOutput = document.getElementById('bettingOutput');
+const betOutput = document.getElementById('betOutput');
+const betInput = document.getElementById('betInput');
 const message = document.getElementById('message');
 const start = document.getElementById('start');
 const btnstart = document.getElementById('btnstart')
@@ -35,8 +36,9 @@ function gameStart() {
 	bet.value = 0;
 	myChips.innerHTML = chips;
 	message.innerHTML = 'Game Started!';
-	bettingOutput.style.display = 'block';
-	cardOutput.innerHTML = '';
+	betOutput.style.display = 'block';
+	betInput.style.display = 'block';
+	cardOutput.innerHTML = '';		
 	start.style.display = 'none';
 	highLow.style.display = 'block';
 	buildCards();
@@ -52,31 +54,33 @@ function hilo(pressedButton){
 		chips += parseInt(bet.value);
 		myChips.innerHTML = chips;
 		message.innerHTML = 'You were Right! :)';
-		//correct.style.display = 'block'
-		//setTimeout(function () {
-		//	correct.style.display = 'none'
-		//}, 1000)
+		/*correct.style.display = 'block'
+		setTimeout(function () {
+			correct.style.display = 'none'
+		}, 1000)*/
 	} else if(pressedButton === 'low' && oldCard > newCard) {	
 		chips += parseInt(bet.value);
 		myChips.innerHTML = chips;
 		message.innerHTML = 'You were Right! :)';
-		//correct.style.display = 'block'
-		//setTimeout(function () {
-		//	correct.style.display = 'none'
-		//}, 1000)
+		/*correct.style.display = 'block'
+	*setTimeout(function () {
+			correct.style.display = 'none'
+		}, 1000)*/
 	} else if(oldCard === newCard) {
 		message.innerHTML = 'Tie!'
 	}else {
 		chips -= parseInt(bet.value);
 		myChips.innerHTML = chips;
 		message.innerHTML = 'You were WRONG!:(';
-		//inCorrect.style.display = 'block';
-		//setTimeout(function () {
-		//	inCorrect.style.display = 'none';
-		//}, 2000)
+		/*inCorrect.style.display = 'block';
+		setTimeout(function () {
+			inCorrect.style.display = 'none';
+		}, 2000)*/
 		if(chips === 0) {
 			message.innerHTML = 'GAME OVER!';
 			endPLay();
+		}if (cardsInPlay === 25) {
+			endPlay();
 		}
 	}
 }
@@ -99,7 +103,7 @@ function shuffleCards(array) {
 function showCards(){
 	let c = cards[cardsInPlay]
 	let bgColor = (c.icon === "H" || c.icon === "D") ? 'red':'black';
-	var hpos = (cardsInPlay > 0) ? cardsInPlay * 80 + 30 : 30;
+	var hpos = (cardsInPlay > 0) ? cardsInPlay * 50 + 40 : 40;
           return '<div class="icard ' + c.suit + '" style="left:' + hpos + 'px;"> <div class="cardtop suit">' + c.num + 
           		 '<br></div> <div class="cardmid suit"></div>  <div class="cardbottom suit">' + c.num + '<br></div></div>';
 }
@@ -140,7 +144,6 @@ bet.addEventListener('change', checkBet);
 bet.addEventListener('input', checkBet);
 bet.addEventListener('blur', checkBet);
 maxBet.addEventListener('click', maximumBet);
-
 
 
 
