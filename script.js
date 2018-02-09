@@ -76,11 +76,11 @@ function hilo(pressedButton){
 		setTimeout(function () {
 			inCorrect.style.display = 'none';
 		}, 2000)*/
-		if(chips === 0) {
+		if (cardsInPlay === 25) {
+			endPlay();
+		}if(chips === 0) {
 			message.innerHTML = 'GAME OVER!';
 			endPLay();
-		}if (cardsInPlay === 25) {
-			endPlay();
 		}
 	}
 }

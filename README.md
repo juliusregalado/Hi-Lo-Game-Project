@@ -22,5 +22,17 @@ Proper planning, time management and execution will be the key to this proect. P
 - https://stackoverflow.com/
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
+## Post Project Thoughts
+- feeling both proud and little embarrased
+	- proud because looking back to myself before I started this program I could nt have done this all by myself because I have zero knowledge in programming couple of months ago
+	- embarrased coz i settled for a very simple game.. now that its finished I now know for myself that I could have pushed myself on writing a more intricate program.
+- if you have a plan and proper time management and execution everything is going to come through
+- roadblocks will always be there, took advantage of all the resources out there for help and information.
+- couple of things in my game that I wanted to do but could not really figure out how to.
+	- minor: navbar, flexbox, scoredisplay(i know the code bt could not figure out why it does not dis appear when i want to)
+	- major: wanted to reset display of the cards at a certain point but keeping everything else is really a challenge that still needs figuring out (messes up my styles everytime i try something)
+- I implemented everything I have learned so far within this class and now have a better understanding on how to apply all ive learned in a program or in the real world 
+- Overall I think I could have done better but I am satisfied with what I have acomplished coz I made the game work the way I actually wanted it to.
+- rate to myself 4 out of 5
 
  
